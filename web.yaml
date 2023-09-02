@@ -1,6 +1,6 @@
 ---
 - name: Installing Nginx
-  hosts: your_target_host
+  hosts: localhost
   become: yes
   tasks:
     - name: Install Nginx
