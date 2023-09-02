@@ -16,7 +16,7 @@
 
     - name: Remove a file if present
       ansible.windows.win_file:
-        path: /usr/share/nginx/html/*
+        path: /usr/share/nginx/html/
         state: absent
 
     - name: Download web artifact
