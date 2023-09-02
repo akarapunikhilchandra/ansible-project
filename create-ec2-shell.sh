@@ -1,5 +1,5 @@
 #!/bin/bash
-NAMES=("mongodb" "web" "mysql")
+NAMES=("web")
 INSTANCE_TYPE=" "
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0c21f4afbf4430ceb
@@ -17,16 +17,16 @@ do
     echo "created $i instance: $IP_ADDRESS"
 
     aws route53 change-resource-record-sets --hosted-zone-id Z10334032ZMZZ509Q21DU --change-batch '
-
+    
     {
 
             "Changes": [{
             "Action": "CREATE",
                         "ResourceRecordSet": {
-                                    "Name": "$DOMAIN_NAME",
-                                    "Type": "A",
-                                    "TTL": 300,
-                                 "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
+                            "Name": "$DOMAIN_NAME",
+                            "Type": "A",
+                            "TTL": 300,
+                            "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
                         }}]
     }
     '
