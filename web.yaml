@@ -29,15 +29,16 @@
         url: https://roboshop-builds.s3.amazonaws.com/web.zip
         dest: /tmp
 
-    - name: Change to a new directory
-      ansible.builtin.file:
-        path: /usr/share/nginx/html
-        state: directory
+    # - name: Change to a new directory
+    #   ansible.builtin.file:
+    #     path: /usr/share/nginx/html
+    #     state: directory
 
     - name: Unzip web.zip
       ansible.builtin.unarchive:
         src: /tmp/web.zip
         dest: /usr/share/nginx/html
+        remote_src: yes
 
     - name: Copy file
       ansible.builtin.copy:
