@@ -18,6 +18,7 @@
       ansible.windows.win_file:
         path: /usr/share/nginx/html/
         state: absent
+        ignore_errors: true
 
     - name: Download web artifact
       ansible.builtin.get_url:
