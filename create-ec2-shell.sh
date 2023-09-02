@@ -17,14 +17,16 @@ do
     echo "created $i instance: $IP_ADDRESS"
 
     aws route53 change-resource-record-sets --hosted-zone-id Z10334032ZMZZ509Q21DU --change-batch '
+
     {
+
             "Changes": [{
             "Action": "CREATE",
                         "ResourceRecordSet": {
-                            "Name": "'$i.$DOMAIN_NAME'",
-                            "Type": "A",
-                            "TTL": 300,
-                            "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
+                                    "Name": "$DOMAIN_NAME",
+                                    "Type": "A",
+                                    "TTL": 300,
+                                 "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
                         }}]
     }
     '
