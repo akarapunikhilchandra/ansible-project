@@ -63,7 +63,7 @@
 
   - name: copy mongo repo to yum.repos.d
     ansible.builtin.copy:
-      src: mongo.repo
+      src: mongodb.repo
       dest: /etc/yum.repos.d/mongo.repo
       remote_src: yes
 
@@ -73,7 +73,7 @@
       state: installed
 
   - name: load catalogue data
-    ansible.builtin.command: mongo --host mongodb.joindevops.online < /app/schema/catalogue.js
+    ansible.builtin.command: mongo --host mongodb.joindevops.cloud < /app/schema/catalogue.js
 
   - name: restart catalogue
     ansible.builtin.service:
