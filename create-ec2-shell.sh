@@ -6,7 +6,7 @@ SECURITY_GROUP_ID=sg-0c21f4afbf4430ceb
 DOMAIN_NAME=joindevops.cloud
 for i in "${NAMES[@]}"
 do   
-    if [[$i == "mongodb" || $i == "web"]] 
+    if [[ $i == "mongodb" || $i == "mysql" ]] 
     then
         INSTANCE_TYPE="t3.micro"
     else
