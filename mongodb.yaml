@@ -1,5 +1,5 @@
 - name: mongodb
-  hosts: localhost
+  hosts: mongodb
   become: yes
   tasks:
   - name: copy file 
