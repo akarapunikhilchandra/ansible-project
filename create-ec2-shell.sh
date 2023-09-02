@@ -23,7 +23,7 @@ do
             "Changes": [{
             "Action": "CREATE",
                         "ResourceRecordSet": {
-                            "Name": "$DOMAIN_NAME",
+                            "Name": "'$i.$DOMAIN_NAME'",
                             "Type": "A",
                             "TTL": 300,
                             "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
@@ -31,3 +31,17 @@ do
     }
     '
 done
+
+#     aws route53 change-resource-record-sets --hosted-zone-id Z098285010FMU6PDV8O9P --change-batch '
+#     {
+#             "Changes": [{
+#             "Action": "CREATE",
+#                         "ResourceRecordSet": {
+#                             "Name": "'$i.$DOMAIN_NAME'",
+#                             "Type": "A",
+#                             "TTL": 300,
+#                             "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
+#                         }}]
+#     }
+#     '
+# done
