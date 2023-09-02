@@ -19,13 +19,13 @@ do
     aws route53 change-resource-record-sets --hosted-zone-id Z10334032ZMZZ509Q21DU
 
     {
-            "Comment": "CREATE",
+        
             "Changes": [{
             "Action": "CREATE",
                         "ResourceRecordSet": {
                                     "Name": "$DOMAIN_NAME",
                                     "Type": "A",
-                                    "TTL": 1,
+                                    "TTL": 300,
                                  "ResourceRecords": [{ "Value": "$IP_ADDRESS"}]
                         }}]
     }
